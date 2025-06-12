@@ -1,0 +1,9 @@
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#667eea" rx="8"/>
+  <text x="200" y="100" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Step 2: Go to Settings</text>
+  <text x="200" y="130" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16">(Navigate to Settings → API Keys)</text>
+  <!-- Menu representation -->
+  <rect x="50" y="160" width="100" height="30" fill="white" rx="4" opacity="0.2"/>
+  <rect x="170" y="160" width="100" height="30" fill="white" rx="4" opacity="0.4"/>
+  <rect x="290" y="160" width="60" height="30" fill="white" rx="4" opacity="0.2"/>
+</svg> 

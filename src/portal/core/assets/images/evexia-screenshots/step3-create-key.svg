@@ -1,0 +1,11 @@
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#667eea" rx="8"/>
+  <text x="200" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Step 3: Create API Key</text>
+  <text x="200" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16">(Generate and copy your new API key)</text>
+  <!-- API Key representation -->
+  <rect x="50" y="140" width="300" height="40" fill="white" rx="4" opacity="0.2"/>
+  <text x="200" y="165" text-anchor="middle" fill="#667eea" font-family="monospace" font-size="12" opacity="0.6">MH100337-XXXX-XXXX-XXXX-XXXXXXXXXXXX</text>
+  <!-- Copy button -->
+  <rect x="150" y="190" width="100" height="35" fill="white" rx="4" opacity="0.3"/>
+  <text x="200" y="212" text-anchor="middle" fill="#667eea" font-family="Arial, sans-serif" font-size="14" font-weight="bold" opacity="0.7">Copy Key</text>
+</svg> 

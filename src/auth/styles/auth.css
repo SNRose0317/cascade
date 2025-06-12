@@ -1,0 +1,346 @@
+/* Authentication Styles */
+:root {
+    --primary-color: #e4a11b;
+    --secondary-color: #1e2637;
+    --dark-blue: #171e2e;
+    --light-text: #ffffff;
+    --gray-text: #a0a8b9;
+    --card-bg: #242f44;
+    --error-color: #ff4d4d;
+    --success-color: #4CAF50;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --input-bg: #2a3446;
+}
+
+/* Modal Styles */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(23, 30, 46, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.auth-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.auth-modal {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 480px;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.auth-modal-overlay.active .auth-modal {
+    transform: translateY(0);
+}
+
+.auth-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--gray-text);
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.auth-modal-close:hover {
+    color: var(--light-text);
+}
+
+.auth-modal-header {
+    background-color: var(--dark-blue);
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(160, 168, 185, 0.1);
+}
+
+.auth-modal-header h2 {
+    margin: 0;
+    color: var(--light-text);
+    font-size: 24px;
+}
+
+.auth-modal-body {
+    padding: 30px;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(160, 168, 185, 0.1);
+}
+
+.auth-tab {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    color: var(--gray-text);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.auth-tab:hover {
+    color: var(--light-text);
+}
+
+.auth-tab.active {
+    color: var(--primary-color);
+}
+
+.auth-tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* Form Styles */
+.auth-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(160, 168, 185, 0.15);
+    border-radius: 5px;
+    color: var(--light-text);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(228, 161, 27, 0.2);
+}
+
+.form-control::placeholder {
+    color: var(--gray-text);
+}
+
+.form-control.error {
+    border-color: var(--error-color);
+}
+
+.form-error {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.auth-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: #2070d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.auth-submit-btn:hover {
+    background-color: #1a5ebd;
+}
+
+.auth-submit-btn:disabled {
+    background-color: #3a4454;
+    cursor: not-allowed;
+}
+
+.auth-submit-btn .loader {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+.auth-submit-btn.loading .loader {
+    display: inline-block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.form-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--primary-color);
+}
+
+.remember-me label {
+    margin-bottom: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Password strength meter */
+.password-strength {
+    margin-top: 8px;
+}
+
+.strength-meter {
+    height: 4px;
+    background-color: var(--input-bg);
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.strength-meter span {
+    display: block;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.strength-text {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.weak {
+    width: 25%;
+    background-color: var(--error-color);
+}
+
+.medium {
+    width: 50%;
+    background-color: #FFA500;
+}
+
+.strong {
+    width: 75%;
+    background-color: #2196F3;
+}
+
+.very-strong {
+    width: 100%;
+    background-color: var(--success-color);
+}
+
+/* Alert Messages */
+.auth-alert {
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.auth-alert.error {
+    background-color: rgba(255, 77, 77, 0.1);
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    color: var(--error-color);
+}
+
+.auth-alert.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    color: var(--success-color);
+}
+
+/* Auth Forms */
+.auth-form-container {
+    display: none;
+}
+
+.auth-form-container.active {
+    display: block;
+}
+
+/* Profile Settings */
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.profile-section h3 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(160, 168, 185, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .auth-modal {
+        max-width: 95%;
+    }
+    
+    .auth-modal-body {
+        padding: 20px;
+    }
+    
+    .auth-tab {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

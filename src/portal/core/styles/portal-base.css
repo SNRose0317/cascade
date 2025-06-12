@@ -1,0 +1,264 @@
+/**
+ * Portal Base Styles
+ * Styles for the authenticated portal application
+ * This file provides portal-specific overrides and additions
+ */
+
+/* ========== Import Common Styles ========== */
+@import '/src/common/styles/variables.css';
+@import '/src/common/styles/reset.css';
+@import '/src/common/styles/utilities.css';
+
+/* ========== Portal Body Override ========== */
+/* Portal has a solid background with subtle pattern overlay for consistency */
+body {
+  /* Fallback for browsers that don't support CSS custom properties */
+  background-color: #121828;
+  /* Solid background color for consistent rendering */
+  background-color: var(--brand-primary);
+  /* Subtle pattern overlay to maintain visual interest without blotchiness */
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(100, 154, 218, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(100, 154, 218, 0.02) 0%, transparent 50%);
+  background-size: 400px 400px, 600px 600px;
+  background-position: 0 0, 200px 200px;
+  /* Ensure background covers full viewport height */
+  min-height: 100vh;
+  /* Prevent background from repeating or causing visual issues */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+}
+
+/* ========== Portal Main Container ========== */
+.portal-main {
+  padding: 2rem 0;
+  background: rgba(18, 24, 40, 0.5);
+  min-height: calc(100vh - 200px);
+}
+
+/* ========== Portal-Specific Component Styles ========== */
+
+/* Portal Cards */
+.portal-card {
+  background: rgba(26, 31, 53, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 154, 218, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.portal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(100, 154, 218, 0.3);
+  border-color: var(--brand-accent);
+}
+
+/* Portal Forms */
+.portal-form {
+  background: rgba(26, 31, 53, 0.8);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(100, 154, 218, 0.2);
+}
+
+.portal-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.portal-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.portal-form input,
+.portal-form select,
+.portal-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(18, 24, 40, 0.6);
+  border: 1px solid rgba(100, 154, 218, 0.2);
+  border-radius: 8px;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.portal-form input:focus,
+.portal-form select:focus,
+.portal-form textarea:focus {
+  outline: none;
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 3px rgba(100, 154, 218, 0.1);
+}
+
+/* Portal Tables */
+.portal-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(26, 31, 53, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.portal-table th {
+  background: rgba(18, 24, 40, 0.8);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-light);
+  border-bottom: 2px solid var(--brand-accent);
+}
+
+.portal-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(100, 154, 218, 0.1);
+}
+
+.portal-table tr:hover {
+  background: rgba(100, 154, 218, 0.05);
+}
+
+/* Portal Alerts */
+.portal-alert {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid;
+  position: relative;
+}
+
+.portal-alert.success {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.portal-alert.error {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+.portal-alert.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--warning-color);
+  color: var(--warning-color);
+}
+
+.portal-alert.info {
+  background: rgba(100, 154, 218, 0.1);
+  border-color: var(--info-color);
+  color: var(--info-color);
+}
+
+/* Portal Navigation */
+.portal-nav {
+  background: rgba(18, 24, 40, 0.9);
+  border-bottom: 1px solid rgba(100, 154, 218, 0.2);
+  padding: 1rem 0;
+}
+
+.portal-nav-item {
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.portal-nav-item:hover {
+  background: rgba(100, 154, 218, 0.1);
+  color: var(--brand-accent);
+}
+
+.portal-nav-item.active {
+  background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-secondary) 100%);
+  color: white;
+}
+
+/* Portal Header Override */
+.portal-header {
+  background: rgba(18, 24, 40, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(100, 154, 218, 0.3);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Portal Button Variants */
+.btn-portal {
+  background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-secondary) 100%);
+  border: none;
+  color: white;
+}
+
+.btn-portal:hover {
+  background: linear-gradient(135deg, var(--brand-secondary) 0%, var(--brand-accent) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(100, 154, 218, 0.4);
+}
+
+.btn-portal-outline {
+  background: transparent;
+  border: 1px solid var(--brand-accent);
+  color: var(--brand-accent);
+}
+
+.btn-portal-outline:hover {
+  background: rgba(100, 154, 218, 0.1);
+  border-color: var(--brand-secondary);
+  color: var(--brand-secondary);
+}
+
+/* Portal Loading States */
+.portal-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(100, 154, 218, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--brand-accent);
+  animation: portal-spin 1s ease-in-out infinite;
+}
+
+@keyframes portal-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Portal Skeleton Loading */
+.portal-skeleton {
+  background: linear-gradient(90deg, 
+    rgba(100, 154, 218, 0.1) 25%, 
+    rgba(100, 154, 218, 0.2) 50%, 
+    rgba(100, 154, 218, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: portal-skeleton 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes portal-skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ========== Portal-Specific Responsive ========== */
+@media (max-width: 768px) {
+  .portal-main {
+    padding: 1rem 0;
+  }
+  
+  .portal-form {
+    padding: 1.5rem;
+  }
+  
+  .portal-table {
+    font-size: 0.875rem;
+  }
+  
+  .portal-table th,
+  .portal-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}

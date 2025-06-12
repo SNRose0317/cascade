@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Diagnostics Portal</title>
+    
+    <!-- Portal Styles -->
+    <link rel="stylesheet" href="/src/portal/core/styles/portal-base.css">
+    <link rel="stylesheet" href="/src/portal/features/landing/styles/landing.css">
+    
+    <!-- Auth Styles -->
+    <link rel="stylesheet" href="/src/auth/styles/auth.css">
+</head>
+<body>
+    <!-- Portal Header -->
+    <div id="portal-header"></div>
+    
+    <!-- Main Content -->
+    <main class="landing-main">
+        <div class="landing-hero">
+            <div class="container">
+                <h1>Welcome to Web3 Diagnostics Portal</h1>
+                <p class="lead">Comprehensive laboratory testing management platform</p>
+                
+                <div class="landing-actions">
+                    <button id="login-btn" class="btn btn-primary">Login</button>
+                    <button id="signup-btn" class="btn btn-outline">Sign Up</button>
+                </div>
+                
+                <div id="auth-status" class="auth-status mt-4"></div>
+            </div>
+        </div>
+        
+        <section class="features-section">
+            <div class="container">
+                <h2>Platform Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Lab Integration</h3>
+                        <p>Connect to major laboratory networks including Quest and LabCorp</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Test Discovery</h3>
+                        <p>Access over 2000+ laboratory tests with advanced search</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Shopify Sync</h3>
+                        <p>Automatically sync your test catalog to your Shopify store</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Pricing Management</h3>
+                        <p>Intelligent markup and margin calculations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Core Scripts -->
+    <script src="/src/portal/core/config/environment.js"></script>
+    <script src="/src/auth/auth-system.js"></script>
+    <script src="/src/portal/shared/services/CustomerDataService.js"></script>
+    <script src="/src/portal/shared/utils/pageInit.js"></script>
+    
+    <!-- Portal Header -->
+    <script src="/src/portal/core/layout/PortalHeader.js"></script>
+    
+    <!-- Landing Page Script -->
+    <script>
+        // Initialize landing page
+        (async function() {
+            'use strict';
+            
+            console.log('🚀 Initializing landing page...');
+            
+            // Initialize header
+            if (window.PortalHeader) {
+                window.PortalHeader.init('portal-header');
+            }
+            
+            // Check authentication status
+            const authSystem = window.authSystem;
+            const isAuthenticated = authSystem && authSystem.isAuthenticated();
+            
+            const authStatus = document.getElementById('auth-status');
+            if (isAuthenticated) {
+                const userData = authSystem.getUserData();
+                authStatus.innerHTML = `
+                    <div class="alert alert-success">
+                        Logged in as: ${userData?.email || 'Unknown'}
+                        <a href="/src/portal/features/dashboard/pages/index.html" class="btn btn-sm btn-success ml-2">Go to Dashboard</a>
+                    </div>
+                `;
+                
+                // Hide login/signup buttons
+                document.getElementById('login-btn').style.display = 'none';
+                document.getElementById('signup-btn').style.display = 'none';
+            }
+            
+            // Setup auth buttons
+            document.getElementById('login-btn')?.addEventListener('click', () => {
+                authSystem?.showAuthModal('login');
+            });
+            
+            document.getElementById('signup-btn')?.addEventListener('click', () => {
+                authSystem?.showAuthModal('signup');
+            });
+            
+            // Listen for auth success
+            window.addEventListener('authSuccess', async (event) => {
+                console.log('🎉 Auth success on landing page');
+                // Redirect to dashboard after successful auth
+                setTimeout(() => {
+                    window.location.href = '/src/portal/features/dashboard/pages/index.html';
+                }, 500);
+            });
+            
+            console.log('✅ Landing page initialized');
+        })();
+    </script>
+</body>
+</html>

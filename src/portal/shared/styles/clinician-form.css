@@ -1,0 +1,412 @@
+/**
+ * Clinician Info Form Styles
+ * Dark theme styling matching React components
+ */
+
+/* Form Container */
+.clinician-info-form {
+    background: transparent;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 100%;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+/* Form Groups and Rows */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row-3 {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+    .form-row,
+    .form-row-3 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-row .form-group,
+    .form-row-3 .form-group {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Form Labels */
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Form Inputs */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #1B2432;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #E7A83B;
+    box-shadow: 0 0 0 2px rgba(231, 168, 59, 0.1);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-input:invalid {
+    border-color: #dc2626;
+}
+
+.form-input:valid {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Select Dropdowns */
+select.form-input {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+select.form-input option {
+    background: #1B2432;
+    color: #ffffff;
+    border: none;
+}
+
+/* Form Help Text */
+.form-help {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
+.form-link {
+    color: #E7A83B;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.form-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* User Type Selection */
+.user-type-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .user-type-selection {
+        grid-template-columns: 1fr;
+    }
+}
+
+.user-type-option {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(42, 53, 68, 0.3);
+}
+
+.user-type-option:hover {
+    background: rgba(42, 53, 68, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-type-option.selected {
+    border-color: rgba(42, 92, 170, 0.5);
+    background: rgba(42, 92, 170, 0.1);
+}
+
+.user-type-option input[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0.125rem 0.75rem 0 0;
+    accent-color: #E7A83B;
+    cursor: pointer;
+}
+
+.user-type-content h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.4;
+}
+
+.user-type-content p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.4;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0.125rem 0.5rem 0 0;
+    accent-color: #E7A83B;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    flex: 1;
+    line-height: 1.4;
+}
+
+/* Custom Checkmark (optional enhancement) */
+.checkmark {
+    display: none; /* Hidden for now, using native checkbox */
+}
+
+/* Form Actions */
+.form-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Submit Button */
+.btn-submit {
+    background: #2A5CAA;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+}
+
+.btn-submit:hover {
+    background: #3A6DBC;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(42, 92, 170, 0.3);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Primary Button (general style) */
+.btn-primary {
+    background: #2A5CAA;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background: #3A6DBC;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(42, 92, 170, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Validation States */
+.form-input.validation-valid {
+    border-color: #059669;
+}
+
+.form-input.validation-invalid {
+    border-color: #dc2626;
+}
+
+.validation-feedback {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
+.validation-success {
+    color: #059669;
+}
+
+.validation-error {
+    color: #dc2626;
+}
+
+/* Loading States */
+.btn-submit.loading::after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .form-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .form-input {
+        padding: 0.625rem 0.875rem;
+    }
+    
+    .btn-submit {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .form-actions {
+        justify-content: stretch;
+    }
+}
+
+/* Focus Management */
+.form-input:focus-visible {
+    outline: 2px solid #E7A83B;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .form-input {
+        border-width: 2px;
+    }
+    
+    .user-type-option.selected {
+        border-width: 3px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .form-input,
+    .btn-submit,
+    .btn-primary,
+    .user-type-option {
+        transition: none;
+    }
+    
+    .btn-submit:hover,
+    .btn-primary:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,175 @@
+/**
+ * Utility Classes
+ * Reusable component styles used across the application
+ * Import this AFTER variables.css and reset.css
+ */
+
+/* ========== Layout Utilities ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-sm {
+  max-width: 960px;
+}
+
+.container-lg {
+  max-width: 1400px;
+}
+
+/* ========== Button Styles ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-secondary) 100%);
+  color: var(--light-text);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid var(--brand-accent);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn i {
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, var(--brand-secondary) 0%, var(--brand-primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(100, 154, 218, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--light-text);
+  border: 2px solid var(--light-text);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-outline i {
+  margin-left: 10px;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--brand-accent);
+  color: var(--brand-accent);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: var(--font-size-lg);
+}
+
+/* ========== Text Utilities ========== */
+.highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* ========== Link Styles ========== */
+.learn-more {
+  color: var(--gray-text);
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.learn-more i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.learn-more:hover {
+  color: var(--light-text);
+}
+
+.learn-more:hover i {
+  transform: translateX(5px);
+}
+
+/* ========== Spacing Utilities ========== */
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+
+.ml-1 { margin-left: var(--spacing-sm); }
+.ml-2 { margin-left: var(--spacing-md); }
+.ml-3 { margin-left: var(--spacing-lg); }
+.ml-4 { margin-left: var(--spacing-xl); }
+
+.p-1 { padding: var(--spacing-sm); }
+.p-2 { padding: var(--spacing-md); }
+.p-3 { padding: var(--spacing-lg); }
+.p-4 { padding: var(--spacing-xl); }
+
+/* ========== Display Utilities ========== */
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-inline-flex { display: inline-flex; }
+
+/* ========== Flexbox Utilities ========== */
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+
+/* ========== Visibility Utilities ========== */
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
+
+/* ========== Overflow Utilities ========== */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+
+/* ========== Position Utilities ========== */
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }
+.position-sticky { position: sticky; }

@@ -1,0 +1,550 @@
+/**
+ * Enhanced Clinician Signup Form Styles
+ * Comprehensive styling for React-to-Vanilla JS conversion
+ */
+
+/* Signup Wrapper */
+.clinician-signup-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(27, 36, 50, 0.95);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .clinician-signup-wrapper {
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+    }
+}
+
+/* Header */
+.signup-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signup-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.signup-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* User Type Selection */
+.user-type-selection-container {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: rgba(42, 53, 68, 0.3);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-type-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.user-type-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 640px) {
+    .user-type-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.user-type-card {
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(27, 36, 50, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-type-card:hover {
+    border-color: rgba(42, 92, 170, 0.4);
+    background: rgba(42, 53, 68, 0.6);
+}
+
+.user-type-card.selected {
+    border-color: #2A5CAA;
+    background: rgba(42, 92, 170, 0.15);
+}
+
+.card-radio {
+    flex-shrink: 0;
+}
+
+.radio-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.radio-circle.checked {
+    border-color: #E7A83B;
+    background: #E7A83B;
+}
+
+.radio-circle.checked::after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #1B2432;
+    border-radius: 50%;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.user-type-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.3;
+}
+
+.user-type-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Form Styles */
+.clinician-form {
+    space-y: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.4;
+}
+
+.section-divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #1B2432;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #E7A83B;
+    box-shadow: 0 0 0 3px rgba(231, 168, 59, 0.1);
+}
+
+.form-hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
+.form-link {
+    color: #E7A83B;
+    text-decoration: none;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+/* Form Rows */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-row-triple {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 640px) {
+    .form-row,
+    .form-row-triple {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* File Upload Section */
+.file-upload-section {
+    border: 2px dashed rgba(42, 92, 170, 0.3);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background: rgba(27, 36, 50, 0.5);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.file-upload-section:hover {
+    border-color: rgba(42, 92, 170, 0.5);
+    background: rgba(42, 53, 68, 0.3);
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.upload-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #E7A83B;
+}
+
+.file-upload-hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.file-input {
+    width: 100%;
+    padding: 0.5rem;
+    background: #1B2432;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+
+.file-input::file-selector-button {
+    background: #2A5CAA;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+/* Terms Section */
+.terms-section {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.checkbox-custom {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.25rem;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.checkbox-input:checked + .checkbox-custom {
+    border-color: #E7A83B;
+    background: #E7A83B;
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+    content: '✓';
+    color: #1B2432;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.checkbox-text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #2A5CAA, #3A6DBC);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.submit-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(42, 92, 170, 0.3);
+}
+
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.terms-footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(27, 36, 50, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top: 3px solid #E7A83B;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+.loading-overlay p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .signup-title {
+        font-size: 1.5rem;
+    }
+    
+    .signup-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .user-type-card {
+        padding: 1rem;
+    }
+    
+    .form-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-divider {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .clinician-signup-wrapper {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .user-type-selection-container {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .file-upload-section {
+        padding: 1rem;
+    }
+    
+    .submit-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .user-type-card {
+        border-width: 3px;
+    }
+    
+    .user-type-card.selected {
+        border-width: 4px;
+    }
+    
+    .form-input,
+    .form-select {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .user-type-card,
+    .submit-button,
+    .loading-spinner,
+    .form-input,
+    .form-select,
+    .checkbox-custom,
+    .radio-circle {
+        transition: none;
+        animation: none;
+    }
+    
+    .user-type-card:hover,
+    .submit-button:hover {
+        transform: none;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.user-type-card:focus-within {
+    outline: 2px solid #E7A83B;
+    outline-offset: 2px;
+}
+
+.checkbox-label:focus-within .checkbox-custom {
+    box-shadow: 0 0 0 3px rgba(231, 168, 59, 0.3);
+}
+
+/* Print Styles */
+@media print {
+    .loading-overlay,
+    .submit-button {
+        display: none;
+    }
+    
+    .clinician-signup-wrapper {
+        background: white;
+        color: black;
+        border: 1px solid black;
+    }
+    
+    .form-input,
+    .form-select {
+        background: white;
+        border: 1px solid black;
+        color: black;
+    }
+}
