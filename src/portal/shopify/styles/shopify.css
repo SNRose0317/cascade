@@ -1,0 +1,374 @@
+/**
+ * Shopify Integration Styles
+ */
+
+/* Modal Styles */
+.shopify-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.shopify-modal {
+  background: var(--background-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+.shopify-modal-header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopify-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.shopify-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.shopify-modal-close:hover {
+  background-color: var(--background-gray);
+  color: var(--text-primary);
+}
+
+.shopify-modal-body {
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+  max-height: calc(90vh - 140px);
+}
+
+/* Connection Form */
+.shopify-connect-form .form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.shopify-connect-form label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-addon {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--background-gray);
+  color: var(--text-secondary);
+  border-left: 1px solid var(--border-color);
+}
+
+.form-text {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.shopify-permissions {
+  background-color: var(--background-gray);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.shopify-permissions h4 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.shopify-permissions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shopify-permissions li {
+  padding: var(--spacing-xs) 0;
+  color: var(--text-secondary);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+/* Store Status Styles */
+.shopify-status {
+  background: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.shopify-status.disconnected {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--background-gray);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.status-icon.success {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: var(--success-color);
+}
+
+.status-content h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.status-content p {
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--text-secondary);
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.status-info {
+  flex: 1;
+}
+
+.status-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.status-url {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.status-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.status-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--background-gray);
+  border-radius: var(--radius-md);
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.detail-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.detail-value.status-idle {
+  color: var(--text-secondary);
+}
+
+.detail-value.status-syncing {
+  color: var(--warning-color);
+}
+
+.detail-value.status-error {
+  color: var(--error-color);
+}
+
+/* Sync Progress */
+.sync-progress {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: rgba(245, 158, 11, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--warning-color);
+  transition: width 0.3s ease;
+}
+
+.sync-message {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Error Display */
+.status-error {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: rgba(220, 38, 38, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--error-color);
+  font-size: 0.875rem;
+}
+
+/* Button Styles */
+.btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--background-gray);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+.btn-danger {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #B91C1C;
+}
+
+.btn-sm {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .status-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .status-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .status-details {
+    grid-template-columns: 1fr;
+  }
+}
